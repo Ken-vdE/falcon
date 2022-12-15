@@ -34,7 +34,7 @@ exports.configureDevServer = (serverAddress, publicPath, port, siteURL) => ({
     '../../modules/**/*.js',
     '../../modules/**/*.css',
   ],
-  open: true,
+  open: false, // true,
   port,
   proxy: {
     '**': {

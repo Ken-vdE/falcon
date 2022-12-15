@@ -19,7 +19,7 @@ const devServerConfig = (serverAddress, publicPath, port, siteURL, entriesArray)
 
 exports.developmentConfig = ({ port, publicPath, serverAddress, siteURL, entriesArray, devServer }) => merge(
   {
-    devtool: "cheap-source-map",
+    devtool: "cheap-module-source-map", // "cheap-source-map"
   },
   devServer ? devServerConfig(serverAddress, publicPath, port, siteURL, entriesArray) : {},
 );
