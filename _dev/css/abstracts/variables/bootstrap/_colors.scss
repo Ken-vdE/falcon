@@ -1,16 +1,32 @@
 // Color system
 
-$white:    #1f1f1f; // #fff;
-$black:    #e0e0e0; // #000;
+// original
+$white:    #fff;
+$black:    #000;
 $gray-100: #f8f9fa;
-$gray-200: darken($white, 2%); // #e9ecef;
-$gray-300: lighten($white, 5%); // #dee2e6;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
-$gray-600: $black; // #6c757d;
-$gray-700: $black; // #495057;
+$gray-600: #6c757d;
+$gray-700: #495057;
 $gray-800: #343a40;
-$gray-900: $black; // #212529;
+$gray-900: #212529;
+
+// customized (black & white swapped)
+$white: #1f1f1f; // $yiq-text-dark
+$black: #e0e0e0;
+$amount: 6%;
+// darkest (top) to lightest (bottom)
+$gray-100: invert($white, 1 * $amount + $amount);
+$gray-200: invert($white, 2 * $amount + $amount);
+$gray-300: invert($white, 3 * $amount + $amount);
+$gray-400: invert($white, 4 * $amount + $amount);
+$gray-500: invert($white, 5 * $amount + $amount);
+$gray-600: invert($white, 6 * $amount + $amount);
+$gray-700: invert($white, 7 * $amount + $amount);
+$gray-800: invert($white, 8 * $amount + $amount);
+$gray-900: $black; // invert($white, 9 * $amount + $amount); // $yiq-text-dark
 
 $blue:    #007bff;
 $indigo:  #6610f2;
@@ -31,3 +47,6 @@ $warning:       #ff9a52;
 $danger:        $red;
 $light:         $white; // $gray-100;
 $dark:          $black; // $gray-800;
+
+$yiq-text-dark:  $white; // $gray-900 !default;
+$yiq-text-light: $gray-900; // $white !default;

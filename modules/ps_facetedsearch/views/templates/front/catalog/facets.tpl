@@ -46,10 +46,11 @@
         {foreach from=$displayedFacets item="facet"}
 
           {assign var=_expand_id value=10|mt_rand:100000}
-          {assign var=_collapse value=true}
+          {assign var=_collapse value=false}
+          {*{assign var=_collapse value=true}
           {foreach from=$facet.filters item="filter"}
             {if $filter.active}{assign var=_collapse value=false}{/if}
-          {/foreach}
+          {/foreach}*}
           <section class="search-filters__block list-group-item">
             <div class="search-filters__header d-flex justify-content-between align-items-center mb-0 h5 position-relative">
               <span class="search-filters__title mb-0">{$facet.label}</span>
@@ -85,9 +86,10 @@
                               style="background-image:url({$filter.properties.texture})"></span>
                           {/if}
                           {$filter.label}
-                          {*{if $filter.magnitude and $show_quantities}*}
-                            {*<span class="magnitude">({$filter.magnitude})</span>*}
-                          {*{/if}*}
+{*                          {if $filter.magnitude and $show_quantities}*}
+                          {if $show_quantities}
+                            <span class="magnitude">({$filter.magnitude})</span>
+                          {/if}
                         </label>
                       </div>
                     </div>
