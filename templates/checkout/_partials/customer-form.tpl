@@ -26,7 +26,7 @@
 
 {block "form_field"}
   {if $field.name === 'password' and $guest_allowed}
-      <p class="form-informations">
+      <p class="form-informations text-muted">
         <span class="font-weight-bold form-informations-title">
           {l s='Create an account' d='Shop.Theme.Checkout'}
         </span>
@@ -34,7 +34,7 @@
           {l s='(optional)' d='Shop.Theme.Checkout'}
         </span>
         <br>
-        <span class="text-muted form-informations-subtitle">
+        <span class="form-informations-subtitle">
           {l s='And save time on your next order!' d='Shop.Theme.Checkout'}
         </span>
       </p>
