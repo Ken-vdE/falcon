@@ -2,7 +2,10 @@
 
 .l-footer {
   padding-top: map.get($spacers, 5);
-  margin-top: auto;
+  //<custom>
+  //margin-top: auto;
+  margin-top: map.get($spacers, 5);
+  background-color: rgba(255, 255, 255, 0.01);
 }
 
 .footer-container {
