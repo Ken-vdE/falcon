@@ -61,7 +61,11 @@
     {/if}
     {if $contact_infos.email && $display_email}
       <br>
-        {mailto address=$contact_infos.email encode="javascript"}
+      {mailto address=$contact_infos.email encode="javascript"}
+    {/if}
+    {if $contact_infos.details}
+      <br>
+      <p style="white-space: pre-wrap;">{$contact_infos.details}</p>
     {/if}
   </div>
 
