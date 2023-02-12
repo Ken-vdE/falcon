@@ -65,7 +65,17 @@
             {if in_array($facet.widgetType, ['radio', 'checkbox'])}
               {block name='facet_item_other'}
                 <div id="facet_{$_expand_id}" class="search-filters__collapse collapse{if !$_collapse} show{/if}">
+                  {* Move '?' to last in array *}
                   {foreach from=$facet.filters key=filter_key item="filter"}
+                    {if $filter.label === '?'}
+                      {$facet.filters["$filter_key-copy"]=$filter}
+                      {break}
+                    {/if}
+                  {/foreach}
+                  {foreach from=$facet.filters key=filter_key item="filter"}
+                    {if $filter.label === '?' && !str_ends_with($filter_key, "-copy")}
+                      {continue}
+                    {/if}
                     {if !$filter.displayed}
                       {continue}
                     {/if}
@@ -85,6 +95,8 @@
                             <span class="custom-control-input-color texture"
                               style="background-image:url({$filter.properties.texture})"></span>
                           {/if}
+                          {*Also @see templates/catalog/_partials/product-details.tpl *}
+                          {$filter.label=$filter.label|regex_replace:"/^\s*\d+\s+\-\s+([a-z])/i":"\$1"}
                           {$filter.label}
 {*                          {if $filter.magnitude and $show_quantities}*}
                           {if $show_quantities}

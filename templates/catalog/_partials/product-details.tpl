@@ -59,6 +59,8 @@
         <dl class="row no-gutters mb-0">
           {foreach from=$product.grouped_features item=feature}
             <dt class="col-4 pr-3 {if !$feature@last}pb-2 mb-2 border-bottom{/if}">{$feature.name}</dt>
+            {*Also @see modules/ps_facetedsearch/views/templates/front/catalog/facets.tpl *}
+            {$feature.value=$feature.value|regex_replace:"/^\s*\d+\s+\-\s+([a-z])/i":"\$1"}
             <dd class="col-8 {if !$feature@last}pb-2 mb-2 border-bottom{/if}">{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
           {/foreach}
         </dl>
