@@ -51,6 +51,8 @@
                         class="custom-control-input-color" style="background-image: url({$group_attribute.texture})"
                       {elseif $group_attribute.html_color_code}
                         class="custom-control-input-color" style="background-color: {$group_attribute.html_color_code}"
+                      {else}
+                        class="custom-control-input-color"
                       {/if}
                     >
                     </span>

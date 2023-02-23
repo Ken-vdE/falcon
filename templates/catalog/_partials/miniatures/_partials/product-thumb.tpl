@@ -3,7 +3,13 @@
     <a href="{$product.url}" class="product-miniature__thumb-link">
       {images_block webpEnabled=$webpEnabled}
         <img
-          {if $product.default_image}
+          {if $product.cover}
+            data-full-size-image-url="{$product.cover.large.url}"
+            {generateImagesSources image=$product.cover size='home_default' lazyload=true}
+            alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
+            width="{$product.cover.bySize.home_default.width}"
+            height="{$product.cover.bySize.home_default.height}"
+          {elseif $product.default_image}
             data-full-size-image-url="{$product.default_image.large.url}"
             {generateImagesSources image=$product.default_image size='home_default' lazyload=true}
             alt="{if !empty($product.default_image.legend)}{$product.default_image.legend}{else}{$product.name|truncate:30:'...'}{/if}"
