@@ -6,20 +6,19 @@
     }
 
     .page-content {
-      margin-bottom: 10rem;
+      margin: 0 auto;
+      text-align: center;
     }
   }
 
   .page-not-found {
     max-width: 570px;
-    padding: 1rem;
-    margin: 0 auto;
     font-size: $font-size-sm;
     color: $gray-600;
-    background: #fff;
+    background: $body-bg;
 
     h4 {
-      margin: 0.5rem 0 1rem;
+      margin: 0.5rem 0 1.25rem;
       font-size: $font-size-base;
       font-weight: 700;
     }
