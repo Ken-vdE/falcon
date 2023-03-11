@@ -30,7 +30,7 @@
 
     {block name='quick_view'}
       <a class="quick-view product-miniature__quick-view btn btn-light shadow rounded-circle" href="#" data-link-action="quickview">
-        <i class="material-icons product-miniature__quick-view-icon">visibility</i>
+        <i class="material-icons product-miniature__quick-view-icon">zoom_in</i>
       </a>
     {/block}
 
