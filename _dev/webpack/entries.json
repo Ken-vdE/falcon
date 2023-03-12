@@ -3,6 +3,7 @@
     "theme",
     "product",
     "checkout",
-    "listing"
+    "listing",
+    "sentry"
   ]
 }
