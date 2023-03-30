@@ -83,3 +83,11 @@
   </div>
   {hook h='displayNavFullWidth'}
 {/block}
+
+{* <custom> *}{*
+<div style="display: flex; justify-content: center; padding: 10px 0 20px;">
+  <span>
+    <span class="material-icons mr-1 align-middle">local_shipping</span>
+    {l s='Free shipping from %price%' sprintf=['%price%' => '€50,-'] d='Shop.Theme.Global'}
+  </span>
+</div>*}

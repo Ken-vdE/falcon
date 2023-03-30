@@ -50,3 +50,21 @@
   {/if}
 {/block}
 
+{* Also see is_shoppingcart.tpl *}
+{*<custom> based on https://nemops.com/prestashop-show-free-shipping *}
+{assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
+{if $freeshipping_price}
+  {* Convert currency if required *}
+  {assign var='freeshipping_price_converted' value={Tools::convertPrice($freeshipping_price)}}
+  <div class="cart-summary-line cart-total col-12 justify-content-center mt-3">
+    <span class="value">{l s='Free shipping from %amount%!' sprintf=['%amount%' => Tools::displayPrice($freeshipping_price_converted)] d='Shop.Theme.Global'}</span>
+  </div>
+  {*{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
+  {math equation='a-b' a=$freeshipping_price_converted b=$total_without_shipping assign='remaining_to_spend'}
+  {if $remaining_to_spend > 0}
+    <div class="cart-summary-line cart-total">
+      <span class="value">{l s='Only %amount% until free shipping!' sprintf=['%amount%' => Tools::displayPrice($remaining_to_spend)] d='Shop.Theme.Global'}</span>
+    </div>
+  {/if}*}
+{/if}
+{*</custom>*}
