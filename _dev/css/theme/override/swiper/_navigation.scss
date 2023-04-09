@@ -3,6 +3,8 @@
   height: auto;
   margin: 0;
   color: $primary;
+  background-color: opacify($white, 0.5);
+  border-radius: 0.4rem;
 
   &::after {
     display: none;
