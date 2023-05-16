@@ -3,6 +3,7 @@ import '@js/theme/vendors/bootstrap/bootstrap-imports';
 import 'bootstrap-touchspin';
 import 'jquery-hoverintent';
 import '@js/theme/components/dynamic-bootstrap-components';
+import bsCustomFileInput from 'bs-custom-file-input';
 
 import '@js/theme/components/selectors';
 import '@js/theme/components/sliders';
@@ -21,6 +22,7 @@ import TopMenu from '@js/theme/components/TopMenu';
 
 import PageLazyLoad from '@js/theme/components/Lazyload';
 import PageLoader from '@js/theme/components/PageLoader';
+import useStickyElement from '@js/theme/components/useStickyElement';
 
 /* eslint-disable */
 // "inherit" EventEmitter
@@ -46,9 +48,20 @@ function accLinksTriggerActive() {
   });
 }
 
+function initStickyHeader() {
+  const header = document.querySelector('.js-header-top');
+  const headerWrapper = document.querySelector('.js-header-top-wrapper');
+
+  if (header && headerWrapper) {
+    useStickyElement(header, headerWrapper);
+  }
+}
+
 $(() => {
+  initStickyHeader();
   accLinksTriggerActive();
   Form.init();
+  bsCustomFileInput.init();
   const topMenu = new TopMenu('#_desktop_top_menu .js-main-menu');
   usePasswordPolicy('.field-password-policy');
 

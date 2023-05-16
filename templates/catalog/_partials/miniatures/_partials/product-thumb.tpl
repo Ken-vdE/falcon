@@ -29,8 +29,8 @@
     </a>
 
     {block name='quick_view'}
-      <a class="quick-view product-miniature__quick-view btn btn-light shadow rounded-circle" href="#" data-link-action="quickview">
-        <i class="material-icons product-miniature__quick-view-icon">zoom_in</i>
+      <a class="quick-view product-miniature__functional-btn btn btn-light shadow rounded-circle" href="#" data-link-action="quickview">
+        <span class="material-icons product-miniature__functional-btn-icon">zoom_in</span>
       </a>
     {/block}
 
