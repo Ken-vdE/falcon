@@ -41,7 +41,12 @@ assets:
 #        path: assets/css/product.css
 #        media: all
 #        priority: 200
-#  js:
+  js:
+    all:
+      - id: sentry
+        path: assets/js/sentry.js
+        position: head
+        priority: 0
 #    cart:
 #      - id: cat-extra-lib
 #        path: assets/js/cart-lib.js

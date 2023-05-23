@@ -23,8 +23,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-<script type="text/javascript" src="{$urls.js_url}sentry.js"></script>
-
 {$jsAssetHash = Configuration::get('PS_CCCJS_VERSION')|md5}
 
 {foreach $javascript.external as $js}
