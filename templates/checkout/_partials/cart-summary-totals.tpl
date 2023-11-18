@@ -58,8 +58,10 @@
   {* Convert currency if required *}
   {assign var='freeshipping_price_converted' value={Tools::convertPrice($freeshipping_price)}}
   <div class="cart-summary-line cart-total col-12 justify-content-center mt-3">
-    <span class="value">{l s='Free shipping from %amount%!' sprintf=['%amount%' => Tools::displayPrice($freeshipping_price_converted)] d='Shop.Theme.Global'}</span>
+    <span class="value">{l s='Free shipping from %amount%!' sprintf=['%amount%' => Tools::displayPrice($freeshipping_price_converted)] d='Shop.Theme.Global'} *</span>
   </div>
+  <div style="font-size: 0.6875em; font-style: italic; text-align: center;">* {l s='Free shipping only applies to Benelux region.' d='Shop.Theme.Global'}</div>
+
   {*{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
   {math equation='a-b' a=$freeshipping_price_converted b=$total_without_shipping assign='remaining_to_spend'}
   {if $remaining_to_spend > 0}
